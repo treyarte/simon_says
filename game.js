@@ -24,7 +24,7 @@ $(".btn").on("click", function(){
     }
   });
 
-  $(document).on("touchstart", function(){
+  $(document).on("touchmove", function(){
     if(gameStart === false){
       $("#level-title").text("Level "+level);
       nextSequence();
