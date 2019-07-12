@@ -15,7 +15,7 @@ $(".btn").on("click", function(){
 });
 
 
-  $(document).on("keypress", function(){
+  $(document).on("keydown", function(){
     if(gameStart === false){
       $("#level-title").text("Level "+level);
       nextSequence();
@@ -24,7 +24,14 @@ $(".btn").on("click", function(){
     }
   });
 
-
+  $(document).on("touchdown", function(){
+    if(gameStart === false){
+      $("#level-title").text("Level "+level);
+      nextSequence();
+      gameStart = true;
+      gamePaused = false;
+    }
+  });
 function nextSequence(){
 
   userClickedPattern = [];
